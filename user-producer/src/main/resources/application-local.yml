@@ -1,0 +1,33 @@
+base-package: com.wwjswly.user
+server:
+  port: 9002
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8
+    username: root
+    password: root
+  rabbitmq:
+    host: 140.143.161.107
+    port: 5672
+    username: user
+    password: user
+    virtual-host: /
+    connection-timeout: 15000
+    listener:
+      simple:
+        max-concurrency: 10
+        acknowledge-mode: manual
+        concurrency: 5
+        prefetch: 1
+mybatis-plus:
+  type-aliases-package: ${base-package}.entity
+  configuration:
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:/mapper/*.xml
+logging:
+  level:
+    com.wwjswly.user: trace
+#  path: /lhdata/wyp-property-service/log
