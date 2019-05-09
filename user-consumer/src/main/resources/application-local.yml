@@ -5,14 +5,14 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8
+    url: jdbc:mysql://140.143.161.107:3306/test?characterEncoding=utf8
     username: root
-    password: root
+    password: 123456
   rabbitmq:
     host: 140.143.161.107
     port: 5672
-    username: user
-    password: user
+    username: admin
+    password: admin
     virtual-host: /
     connection-timeout: 15000
 mybatis-plus:
